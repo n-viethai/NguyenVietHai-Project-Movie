@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Carousel } from "antd";
+// import { Carousel } from "antd";
+import Slider from "react-slick";
 import { getCarouselAction } from "../../../../redux/actions/CarouselAction";
+import  "./HomeCarousel.css";
 
 export default function HomeCarousel(props) {
   const { arrImg } = useSelector((state) => state.CarouselReducer);
@@ -45,6 +47,16 @@ export default function HomeCarousel(props) {
     backgroundSize: "100%",
     backgroundRepeat: "no-repeat",
   };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    fade: true,
+  };
   const renderImg = () => {
     return arrImg.map((item, index) => {
       return (
@@ -67,10 +79,10 @@ export default function HomeCarousel(props) {
   };
 
   return (
-    <div>
-      <Carousel effect="fade" autoplay>
-        {renderImg()}
-      </Carousel>
+    <div className="homeCarousel">
+      {/* <Carousel effect="fade" autoplay>
+      </Carousel> */}
+      <Slider {...settings}>{renderImg()}</Slider>
     </div>
   );
 }
