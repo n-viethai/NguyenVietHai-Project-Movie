@@ -6,3 +6,4 @@ export const TokenCybersoft =
 
 export const ACCESS_TOKEN = "accessToken";
 export const GROUP_ID = "GP13";
+export const USER_LOGIN = "USER_LOGIN";

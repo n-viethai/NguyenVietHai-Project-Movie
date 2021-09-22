@@ -1,26 +1,14 @@
-import React, { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import { NavLink } from "react-router-dom";
+import { history } from "../../../../App";
 
 export default function Header(props) {
-  const ref = useRef(null);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch({
-      type: "HEADER_HEIGHT",
-      height: ref.current.clientHeight,
-    });
-  },[]);
-
   return (
     <div>
-      <header
-        ref={ref}
-        className="p-4 bg-opacity-40 bg-black fixed top-0 w-full z-50"
-      >
+      <header className="p-4 bg-opacity-40 bg-black fixed top-0 w-full z-50">
         <div className="container flex justify-between mx-auto h-10">
-          <a
-            href="#"
+          <NavLink
+            to="/home"
             aria-label="Back to homepage"
             className="flex items-center p-2"
           >
@@ -28,7 +16,7 @@ export default function Header(props) {
               src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png"
               alt="..."
             />
-          </a>
+          </NavLink>
           <ul className="items-stretch hidden space-x-3 lg:flex">
             <li className="flex">
               <NavLink
@@ -59,7 +47,12 @@ export default function Header(props) {
             </li>
           </ul>
           <div className="items-center flex-shrink-0 hidden lg:flex">
-            <button className="self-center px-8 py-3 rounded text-white">
+            <button
+              className="self-center px-8 py-3 rounded text-white"
+              onClick={() => {
+                history.push("/login");
+              }}
+            >
               Sign in
             </button>
             <button className="self-center px-8 py-3 font-semibold rounded text-white">

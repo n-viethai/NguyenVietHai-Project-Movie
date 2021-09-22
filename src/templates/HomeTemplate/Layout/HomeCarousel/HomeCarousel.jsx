@@ -35,7 +35,7 @@ export default function HomeCarousel(props) {
 
   useEffect(() => {
     dispatch(getCarouselAction());
-  }, []);
+  }, [dispatch]);
 
   const contentStyle = {
     height: "100vh",

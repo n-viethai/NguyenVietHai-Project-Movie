@@ -2,9 +2,9 @@ import { GROUP_ID } from "../util/setting/config";
 import { baseService } from "./baseService";
 
 class QuanLyPhimService extends baseService {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
   layDanhSachBanner = () => {
     return this.get("/api/QuanLyPhim/LayDanhSachBanner");
   };

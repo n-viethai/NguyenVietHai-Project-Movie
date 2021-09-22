@@ -6,7 +6,6 @@ const { TabPane } = Tabs;
 
 function HomeMenu(props) {
   const { heThongRapChieu } = props;
-  console.log(heThongRapChieu);
   const renderHeThongRap = () => {
     return heThongRapChieu?.map((heThongRap, index) => {
       return (
@@ -17,6 +16,7 @@ function HomeMenu(props) {
               src={heThongRap.logo}
               className="rounded-full"
               width="50"
+              alt={heThongRap.logo}
             ></img>
           }
         >
@@ -32,6 +32,7 @@ function HomeMenu(props) {
                           src="https://s3img.vcdn.vn/123phim/2018/10/lotte-cinema-phu-tho-15383865322515.jpg"
                           width="50"
                           className="rounded"
+                          alt="..."
                         ></img>
                       </div>
                       <div className="ml-3 text-sm text-left">
@@ -49,7 +50,7 @@ function HomeMenu(props) {
                     </div>
                   }
                 >
-                  {cumRap.danhSachPhim.slice(0,4).map((phim, index) => {
+                  {cumRap.danhSachPhim.slice(0, 4).map((phim, index) => {
                     return (
                       <div className="p-4 border-b border-gray-300" key={index}>
                         <div className="flex">
@@ -65,19 +66,25 @@ function HomeMenu(props) {
                             />
                           </div>
                           <div className="ml-4">
-                            <h1 className="text-2xl font-medium">{phim.tenPhim}</h1>
+                            <h1 className="text-2xl font-medium">
+                              {phim.tenPhim}
+                            </h1>
                             <div className="grid grid-cols-6 gap-5">
-                              {phim.lstLichChieuTheoPhim?.slice(0,10).map(
-                                (lichChieu, index) => {
+                              {phim.lstLichChieuTheoPhim
+                                ?.slice(0, 10)
+                                .map((lichChieu, index) => {
                                   return (
-                                    <NavLink to="/home" className="text-xl text-green-600">
+                                    <NavLink
+                                      to="/home"
+                                      className="text-xl text-green-600"
+                                      key={index}
+                                    >
                                       {moment(
                                         lichChieu.ngayChieuGioChieu
                                       ).format("hh:mm A")}
                                     </NavLink>
                                   );
-                                }
-                              )}
+                                })}
                             </div>
                           </div>
                         </div>
