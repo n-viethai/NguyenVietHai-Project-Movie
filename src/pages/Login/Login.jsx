@@ -1,12 +1,12 @@
 import React from "react";
 import { useFormik } from "formik";
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { dangNhapAction } from "../../redux/actions/QuanLyNguoiDungAction";
 
 export default function Login(props) {
   const dispatch = useDispatch();
-  const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
+  // const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
   const formik = useFormik({
     initialValues: {
       taiKhoan: "",
@@ -83,12 +83,12 @@ export default function Login(props) {
                   Mật khẩu
                 </div>
                 <div>
-                  <a
+                  <p
                     className="text-xs font-display font-semibold text-indigo-600 hover:text-indigo-800
                                   cursor-pointer"
                   >
                     Quên mật khẩu?
-                  </a>
+                  </p>
                 </div>
               </div>
               <input

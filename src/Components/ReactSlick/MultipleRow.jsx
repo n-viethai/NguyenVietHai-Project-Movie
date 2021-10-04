@@ -36,7 +36,7 @@ export default function MultipleRow(props) {
   };
   return (
     <div>
-      <div className="p-4">
+      <div className="p-1">
         <button
           className={`px-8 py-3 border-2 rounded border-gray-500 font-bold hover:bg-gray-500 hover:text-white transition-all duration-500 ease-in-out ${
             activeDangChieu === true ? "active-film" : ""

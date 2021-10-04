@@ -5,6 +5,7 @@ import MultipleRows from "../../Components/ReactSlick/MultipleRow";
 import { layDanhSachPhimAction } from "../../redux/actions/QuanLyPhimAction";
 import { layDanhSachHeThongRapAction } from "../../redux/actions/QuanLyRapAction";
 import HomeCarousel from "../../templates/HomeTemplate/Layout/HomeCarousel/HomeCarousel";
+// import { hideLoadingAction } from "../../redux/actions/LoadingAction";
 
 export default function Home(props) {
   const { arrFilm } = useSelector((state) => state.QuanLyPhimReducer);
@@ -18,7 +19,7 @@ export default function Home(props) {
   return (
     <Fragment>
       <HomeCarousel />
-      <div className="2xl:max-w-screen-xl mx-auto">
+      <div className="2xl:max-w-screen-lg mx-auto">
         <section className="text-gray-600">
           <div className="container px-5 py-10 mx-auto">
             <div className="home-films">

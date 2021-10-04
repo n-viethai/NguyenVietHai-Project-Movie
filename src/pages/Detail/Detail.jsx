@@ -12,7 +12,7 @@ const { TabPane } = Tabs;
 export default function Detail(props) {
   const cricleRatingRef = useRef(null);
   const { filmDetail } = useSelector((state) => state.QuanLyPhimReducer);
-  console.log({ filmDetail });
+  // console.log({ filmDetail });
   const dispatch = useDispatch();
   useEffect(() => {
     let ratingColor = "";
@@ -118,9 +118,7 @@ export default function Detail(props) {
                               src={htr.logo}
                               alt={htr.logo}
                             />
-                            <span className="mx-4">
-                              {htr.maHeThongRap}
-                            </span>
+                            <span className="mx-4">{htr.maHeThongRap}</span>
                           </div>
                         }
                         key={index}
@@ -128,7 +126,7 @@ export default function Detail(props) {
                         <div>
                           {htr.cumRapChieu?.map((rap, index) => {
                             return (
-                              <div className="border-b border-gray-200 mt-2 mb-8">
+                              <div className="border-b border-gray-200 mt-2 mb-8" key={index}>
                                 <div className="flex">
                                   <div>
                                     <img
@@ -154,7 +152,7 @@ export default function Detail(props) {
                                         (lichChieu, index) => {
                                           return (
                                             <NavLink
-                                              to="/home"
+                                              to={`/checkout/${lichChieu.maLichChieu}`}
                                               className="text-lg my-3"
                                               key={index}
                                             >

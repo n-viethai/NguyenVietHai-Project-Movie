@@ -11,6 +11,7 @@ import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import CheckoutTemplate from "./templates/CheckoutTemplate/CheckoutTemplate";
 import Checkout from "./pages/Checkout/Checkout";
 import { UserTemplate } from "./templates/UserTemplate/UserTemplate";
+import Loading from "./Components/Loading/Loading";
 // import { lazy, Suspense } from "react";
 // const CheckoutTemplateLazy = lazy(() =>
 //   import("./templates/CheckoutTemplate/CheckoutTemplate")
@@ -22,6 +23,7 @@ function App() {
   return (
     <Router history={history}>
       <ScrollToTop />
+      <Loading />
       <Switch>
         <HomeTemplate exact path="/home" Component={Home} />
         <HomeTemplate exact path="/contact" Component={Contact} />

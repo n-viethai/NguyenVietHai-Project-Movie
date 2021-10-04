@@ -8,7 +8,7 @@ export default function Header(props) {
       <header className="p-4 bg-opacity-40 bg-black fixed top-0 w-full z-50">
         <div className="container flex justify-between mx-auto h-10">
           <NavLink
-            to="/home"
+            to="/"
             aria-label="Back to homepage"
             className="flex items-center p-2"
           >

@@ -7,15 +7,15 @@ export default function Film(props) {
   // console.log({ phim });
   return (
     <Fragment>
-      <div className="p-4">
+      <div className="px-1 py-3">
         <div className="h-full bg-gray-100 rounded-lg overflow-hidden relative shadow-md">
           <div
             style={{
               backgroundImage: `url(${phim.hinhAnh}), url(${imgDefault})`,
               backgroundPosition: "center",
-              backgroundSize: "100% auto",
+              backgroundSize: "cover",
               backgroundRepeat: "no-repeat, repeat-y",
-              height: "400px",
+              height: "360px",
               width: "100%",
             }}
           ></div>

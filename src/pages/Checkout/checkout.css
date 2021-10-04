@@ -1,0 +1,38 @@
+.ghe {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #01c73c;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 4px 4px;
+}
+
+.gheDaDat {
+    background-color: #bbb;
+    border: 1px solid #bbb !important;
+    color: #fff;
+    pointer-events: none;
+}
+
+.gheDangChon {
+    background-color: #b11500 !important ;
+    border: 1px solid #b11500 !important ;
+    color: #fff;
+}
+
+.gheDangDuocNguoiKhacDat {
+    background-color: rgb(4, 134, 134) !important ;
+    border: 1px solid rgb(4, 134, 134) !important ;
+    pointer-events: none;
+    color: #fff;
+}
+
+.gheVip {
+    border: 1px solid #f71708;
+}
