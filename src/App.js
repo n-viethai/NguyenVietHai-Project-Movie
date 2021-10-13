@@ -29,7 +29,7 @@ function App() {
         <HomeTemplate exact path="/contact" Component={Contact} />
         <HomeTemplate exact path="/news" Component={News} />
         <HomeTemplate exact path="/detail/:id" Component={Detail} />
-        <Route exact path="/register" component={Register} />
+        <UserTemplate exact path ="/register" Component = {Register} />
         <CheckoutTemplate exact path="/checkout/:id" Component={Checkout} />
         {/* <Suspense fallback={<h1>LOADING....</h1>}>
           <CheckoutTemplateLazy

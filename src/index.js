@@ -16,11 +16,17 @@ import { store } from "./redux/configStore";
 import { DOMAIN } from "./util/setting/config";
 
 //Đoạn code để kết nối đến server và luôn lắng nghe sự kiện từ server
-import * as signalR from "@aspnet/signalr"
+import * as signalR from "@aspnet/signalr";
+
+//import đa ngôn ngữ
+import "./i18n";
+
 export const connection = new signalR.HubConnectionBuilder()
   .withUrl(`${DOMAIN}/DatVeHub`)
   .configureLogging(signalR.LogLevel.Information)
   .build();
+
+
 
 connection
   .start()

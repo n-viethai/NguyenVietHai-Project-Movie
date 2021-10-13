@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import _ from "lodash";
 import {
@@ -8,13 +8,13 @@ import {
   setGheDangDuocTatCaClientDatAction,
 } from "../../redux/actions/QuanLyDatVeAction";
 import "./checkout.css";
-import { DAT_VE } from "../../redux/types/QuanLyDatVeType";
 import { ThongTinDatVe } from "../../_core/models/ThongTinDatVe";
 import { Tabs } from "antd";
 import { layThongTinNguoiDungAction } from "../../redux/actions/QuanLyNguoiDungAction";
 import moment from "moment";
 import { connection } from "../../index";
-
+import { history } from "../../App";
+import { UserOutlined } from "@ant-design/icons";
 function Checkout(props) {
   const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
   const { chiTietPhongVe, danhSachGheDangDat, danhSachGheDangCoNguoiDat } =
@@ -347,9 +347,30 @@ const { TabPane } = Tabs;
 export default function (props) {
   const { tabActive } = useSelector((state) => state.QuanLyDatVeReducer);
   const dispatch = useDispatch();
+  const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
+  const operations = (
+    <div className="flex items-center">
+      <div className="mr-2 bg-black w-8 h-8 text-white rounded-full text-center text-xl font-semibold flex items-center justify-center">
+        <UserOutlined />
+      </div>
+      {!_.isEmpty(userLogin) ? (
+        <button
+        className="text-base font-semibold"
+          onClic={() => {
+            history.push("/profile");
+          }}
+        >
+          {userLogin.taiKhoan}
+        </button>
+      ) : (
+        ""
+      )}
+    </div>
+  );
   return (
     <div>
       <Tabs
+        tabBarExtraContent={operations}
         defaultActiveKey="1"
         activeKey={tabActive.toString()}
         onChange={(key) => {
