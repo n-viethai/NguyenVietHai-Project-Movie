@@ -12,6 +12,11 @@ import CheckoutTemplate from "./templates/CheckoutTemplate/CheckoutTemplate";
 import Checkout from "./pages/Checkout/Checkout";
 import { UserTemplate } from "./templates/UserTemplate/UserTemplate";
 import Loading from "./Components/Loading/Loading";
+import AdminTemplate from "./templates/AdminTemplate/AdminTemplate";
+import Dashboard from "./pages/Admin/Dashboard/Dashboard";
+import AdminFilm from "./pages/Admin/Films/AdminFilm";
+import Showtime from "./pages/Admin/Showtime/Showtime";
+import AddFilm from "./pages/Admin/Films/AddFilm/AddFilm";
 // import { lazy, Suspense } from "react";
 // const CheckoutTemplateLazy = lazy(() =>
 //   import("./templates/CheckoutTemplate/CheckoutTemplate")
@@ -29,7 +34,7 @@ function App() {
         <HomeTemplate exact path="/contact" Component={Contact} />
         <HomeTemplate exact path="/news" Component={News} />
         <HomeTemplate exact path="/detail/:id" Component={Detail} />
-        <UserTemplate exact path ="/register" Component = {Register} />
+        <UserTemplate exact path="/register" Component={Register} />
         <CheckoutTemplate exact path="/checkout/:id" Component={Checkout} />
         {/* <Suspense fallback={<h1>LOADING....</h1>}>
           <CheckoutTemplateLazy
@@ -38,7 +43,12 @@ function App() {
             Component={Checkout}
           />
         </Suspense> */}
-        <UserTemplate exact path ="/login" Component = {Login} />
+        <AdminTemplate exact path="/admin" Component={Dashboard} />
+        <AdminTemplate exact path="/admin/user" Component={Dashboard} />
+        <AdminTemplate exact path="/admin/film" Component={AdminFilm} />
+        <AdminTemplate exact path="/admin/film/addfilm" Component={AddFilm} />
+        <AdminTemplate exact path="/admin/showtime" Component={Showtime} />
+        <UserTemplate exact path="/login" Component={Login} />
         <HomeTemplate exact path="/" Component={Home} />
       </Switch>
     </Router>

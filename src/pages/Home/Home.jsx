@@ -19,7 +19,7 @@ export default function Home(props) {
   return (
     <Fragment>
       <HomeCarousel />
-      <div className="2xl:max-w-screen-lg mx-auto">
+      <div className="max-w-screen-lg mx-auto">
         <section className="text-gray-600">
           <div className="container px-5 py-10 mx-auto">
             <div className="home-films">
