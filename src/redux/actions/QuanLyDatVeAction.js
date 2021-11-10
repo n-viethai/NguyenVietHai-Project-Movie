@@ -29,7 +29,7 @@ export const datVeAction = (thongTinDatVe) => {
     try {
       dispatch(displayLoadingAction);
       const result = await datVe(thongTinDatVe);
-
+      console.log(result);
       //Đặt vé thành công gọi API load lại phòng vé
       await dispatch(layChiTietPhongVeAction(thongTinDatVe.maLichChieu));
       await dispatch({ type: DAT_VE_HOAN_TAT });

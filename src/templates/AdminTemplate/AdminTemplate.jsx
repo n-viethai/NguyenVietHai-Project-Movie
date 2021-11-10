@@ -20,10 +20,10 @@ function AdminTemplate(props) {
     alert("Bạn không có quyền truy cập vào trang này!");
     return <Redirect to="/home" />;
   }
-  //   if (userLogin.maLoaiNguoiDung !== "QuanTri") {
-  //     alert("Bạn không có quyền truy cập vào trang này!");
-  //     return <Redirect to="/home" />;
-  //   }
+    if (userLogin.maLoaiNguoiDung !== "QuanTri") {
+      alert("Bạn không có quyền truy cập vào trang này!");
+      return <Redirect to="/home" />;
+    }
   return (
     <Route
       {...restProps}

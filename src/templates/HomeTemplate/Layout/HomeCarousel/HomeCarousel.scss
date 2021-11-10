@@ -1,0 +1,37 @@
+.homeCarousel {
+  .slick-next {
+    z-index: 1;
+    right: 0px;
+    transform: translate(50%, -25%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #000;
+    &::before {
+      font-size: 16px;
+      /* font-weight: 600; */
+      color: #000;
+      font-family: "";
+      opacity: 0.5;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+  .slick-prev {
+    @extend .slick-next;
+    transform: translate(-50%, -25%);
+    left: 0px;
+    right: initial;
+    &::before {
+      @extend .slick-next::before;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .slick-dots {
+    bottom: 20px;
+  }
+}

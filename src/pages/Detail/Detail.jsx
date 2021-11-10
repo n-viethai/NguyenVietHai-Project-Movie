@@ -35,7 +35,7 @@ export default function Detail(props) {
     // lấy thông tin param từ url
     let { id } = props.match.params;
     dispatch(layThongTinChiTietPhimAction(id));
-  }, [dispatch]);
+  }, [dispatch, props]);
 
   return (
     <div>

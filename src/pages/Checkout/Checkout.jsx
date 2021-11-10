@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import _ from "lodash";
 import {
@@ -73,7 +73,7 @@ function Checkout(props) {
             let classGheVip = ghe.loaiGhe === "Vip" ? "gheVip" : "";
             let classGheDaDat = ghe.daDat === true ? "gheDaDat" : "";
             let classGheDangChon = "";
-            //kiểmt tra xem ghế render có đang được chọn hay không
+            //kiểm tra xem ghế render có đang được chọn hay không
             let gheDangChon = danhSachGheDangDat.find(
               (item) => item.maGhe === ghe.maGhe
             );
@@ -356,7 +356,7 @@ export default function (props) {
       {!_.isEmpty(userLogin) ? (
         <button
         className="text-base font-semibold"
-          onClic={() => {
+          onClickCapture={() => {
             history.push("/profile");
           }}
         >

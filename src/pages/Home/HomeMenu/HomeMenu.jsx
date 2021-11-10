@@ -21,7 +21,7 @@ function HomeMenu(props) {
           }
         >
           <Tabs tabPosition="left" size="large">
-            {heThongRap.lstCumRap?.map((cumRap, index) => {
+            {heThongRap.lstCumRap?.slice(0, 6).map((cumRap, index) => {
               return (
                 <TabPane
                   key={index}
@@ -69,14 +69,14 @@ function HomeMenu(props) {
                             <h1 className="text-2xl font-medium">
                               {phim.tenPhim}
                             </h1>
-                            <div className="grid grid-cols-6 gap-5">
+                            <div className="grid grid-cols-5 gap-3">
                               {phim.lstLichChieuTheoPhim
-                                ?.slice(0, 10)
+                                ?.slice(0, 5)
                                 .map((lichChieu, index) => {
                                   return (
                                     <NavLink
                                       to={`/checkout/${lichChieu.maLichChieu}`}
-                                      className="text-xl text-green-600"
+                                      className="text-base bg-black bg-opacity-40 text-white p-1 rounded-md hover:text-red-500"
                                       key={index}
                                     >
                                       {moment(
@@ -101,7 +101,20 @@ function HomeMenu(props) {
   };
   return (
     <div>
-      <Tabs tabPosition="left" size="large">
+      <div>
+        <div className="title mt-5">
+          <h1>HỆ THỐNG RẠP</h1>
+        </div>
+      </div>
+      <Tabs
+        tabPosition="left"
+        size="large"
+        style={{
+          marginTop: "40px",
+          border: "1px solid rgba(0, 0, 0, 0.2)",
+          padding: "20px",
+        }}
+      >
         {renderHeThongRap()}
       </Tabs>
     </div>

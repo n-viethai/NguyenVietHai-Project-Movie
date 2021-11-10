@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 // import { Carousel } from "antd";
 import Slider from "react-slick";
 import { getCarouselAction } from "../../../../redux/actions/CarouselAction";
-import  "./HomeCarousel.css";
+import "./HomeCarousel.scss";
+import bgSlider from "../../../../assets/img/bg_c_bricks.png";
 
 export default function HomeCarousel(props) {
   const { arrImg } = useSelector((state) => state.CarouselReducer);
@@ -38,7 +39,7 @@ export default function HomeCarousel(props) {
   }, [dispatch]);
 
   const contentStyle = {
-    height: "100vh",
+    height: "500px",
     color: "#fff",
     lineHeight: "160px",
     textAlign: "center",
@@ -46,16 +47,16 @@ export default function HomeCarousel(props) {
     backgroundPosition: "center",
     backgroundSize: "100%",
     backgroundRepeat: "no-repeat",
+    borderRadius: "20px",
   };
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    fade: true,
   };
   const renderImg = () => {
     return arrImg.map((item, index) => {
@@ -79,10 +80,10 @@ export default function HomeCarousel(props) {
   };
 
   return (
-    <div className="homeCarousel">
-      {/* <Carousel effect="fade" autoplay>
-      </Carousel> */}
-      <Slider {...settings}>{renderImg()}</Slider>
+    <div className="homeCarousel" style={{marginTop:"72px"}}>
+      <div style={{backgroundImage:`url(${bgSlider})`, backgroundRepeat:"repeat-x", backgroundSize:"contain", height:"500px"}}>
+        <Slider className=" max-w-screen-lg mx-auto" {...settings}>{renderImg()}</Slider>
+      </div>
     </div>
   );
 }

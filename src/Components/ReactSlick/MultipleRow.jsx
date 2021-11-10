@@ -1,18 +1,11 @@
 import React, { Fragment, useState } from "react";
-import { useDispatch } from "react-redux";
 import Slider from "react-slick";
 import Film from "../Film/Film";
-import "./MultipleRow.css";
-import {
-  SET_PHIM_DANG_CHIEU,
-  SET_PHIM_SAP_CHIEU,
-} from "../../redux/types/QuanLyPhimType";
+import "./MultipleRow.scss";
+
 
 export default function MultipleRow(props) {
-  const dispatch = useDispatch();
   const { arrFilm } = props;
-  const [activeDangChieu, setActiveDangChieu] = useState(true);
-  const [activeSapChieu, setActiveSapChieu] = useState(false);
   const settings = {
     className: "center",
     centerMode: false,
@@ -22,11 +15,22 @@ export default function MultipleRow(props) {
     slidesToScroll: 4,
     speed: 1000,
     rows: 1,
-    slidesPerRow: 2,
+    slidesPerRow: 1,
   };
 
-  const renderFilm = () => {
-    return arrFilm.map((item, index) => {
+  const renderFilmDangChieu = () => {
+    let arrFilmDangChieu = arrFilm.filter((item) => item.dangChieu === true);
+    return arrFilmDangChieu.map((item, index) => {
+      return (
+        <Fragment key={index}>
+          <Film phim={item} />
+        </Fragment>
+      );
+    });
+  };
+  const renderFilmSapChieu = () => {
+    let arrFilmSapChieu = arrFilm.filter((item) => item.sapChieu === true);
+    return arrFilmSapChieu.map((item, index) => {
       return (
         <Fragment key={index}>
           <Film phim={item} />
@@ -36,37 +40,16 @@ export default function MultipleRow(props) {
   };
   return (
     <div>
-      <div className="p-1">
-        <button
-          className={`px-8 py-3 border-2 rounded border-gray-500 font-bold hover:bg-gray-500 hover:text-white transition-all duration-500 ease-in-out ${
-            activeDangChieu === true ? "active-film" : ""
-          }`}
-          onClick={() => {
-            dispatch({
-              type: SET_PHIM_DANG_CHIEU,
-            });
-            setActiveDangChieu(true);
-            setActiveSapChieu(false);
-          }}
-        >
-          PHIM ĐANG CHIẾU
-        </button>
-        <button
-          className={`mx-4 px-8 py-3 border-2 rounded border-gray-500 font-bold hover:bg-gray-500 hover:text-white transition-all duration-500 ease-in-out ${
-            activeSapChieu === true ? "active-film" : ""
-          }`}
-          onClick={() => {
-            dispatch({
-              type: SET_PHIM_SAP_CHIEU,
-            });
-            setActiveDangChieu(false);
-            setActiveSapChieu(true);
-          }}
-        >
-          PHIM SẮP CHIẾU
-        </button>
+      <div className="title mt-10">
+        <h1>PHIM ĐANG CHIẾU</h1>
       </div>
-      <Slider {...settings}>{renderFilm()}</Slider>
+      <Slider {...settings}>{renderFilmDangChieu()}</Slider>
+      <div>
+        <div className="title mt-16">
+          <h1>PHIM SẮP CHIẾU</h1>
+        </div>
+        <Slider {...settings}>{renderFilmSapChieu()}</Slider>
+      </div>
     </div>
   );
 }

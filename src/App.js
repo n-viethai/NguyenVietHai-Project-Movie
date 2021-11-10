@@ -1,5 +1,5 @@
 import { createBrowserHistory } from "history";
-import { Router, Route, Switch } from "react-router";
+import { Router, Switch } from "react-router";
 import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
 import News from "./pages/News/News";
@@ -17,6 +17,7 @@ import Dashboard from "./pages/Admin/Dashboard/Dashboard";
 import AdminFilm from "./pages/Admin/Films/AdminFilm";
 import Showtime from "./pages/Admin/Showtime/Showtime";
 import AddFilm from "./pages/Admin/Films/AddFilm/AddFilm";
+import EditFilm from "./pages/Admin/Films/EditFilm/EditFilm";
 // import { lazy, Suspense } from "react";
 // const CheckoutTemplateLazy = lazy(() =>
 //   import("./templates/CheckoutTemplate/CheckoutTemplate")
@@ -47,7 +48,8 @@ function App() {
         <AdminTemplate exact path="/admin/user" Component={Dashboard} />
         <AdminTemplate exact path="/admin/film" Component={AdminFilm} />
         <AdminTemplate exact path="/admin/film/addfilm" Component={AddFilm} />
-        <AdminTemplate exact path="/admin/showtime" Component={Showtime} />
+        <AdminTemplate exact path="/admin/film/editfilm/:id" Component={EditFilm} />
+        <AdminTemplate exact path="/admin/film/showtime/:id/:tenphim" Component={Showtime} />
         <UserTemplate exact path="/login" Component={Login} />
         <HomeTemplate exact path="/" Component={Home} />
       </Switch>

@@ -1,9 +1,0 @@
-.home-films .slick-prev::before,
-.home-films .slick-next::before {
-  color: black;
-  font-size: 25px;
-}
-
-.active-film {
-  @apply bg-gray-500 text-white;
-}

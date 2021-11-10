@@ -11,6 +11,6 @@ export default function ScrollToTop() {
       type:"CHUYEN_TAB_ACTIVE",
       tabKey: 1
     });
-  }, [pathname,dispatch]);
+  },[pathname]);
   return null;
 }

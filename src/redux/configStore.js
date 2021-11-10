@@ -5,6 +5,7 @@ import { QuanLyRapReducer } from "./reducers/QuanLyRapReducer";
 import { QuanLyNguoiDungReducer } from "./reducers/QuanLyNguoiDungReducer";
 import { QuanLyDatVeReducer } from "./reducers/QuanLyDatVeReducer";
 import { LoadingReducer } from "./reducers/LoadingReducer";
+import { HomeModalReducer } from "./reducers/HomeModalReducer";
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   QuanLyNguoiDungReducer,
   QuanLyDatVeReducer,
   LoadingReducer,
+  HomeModalReducer
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));

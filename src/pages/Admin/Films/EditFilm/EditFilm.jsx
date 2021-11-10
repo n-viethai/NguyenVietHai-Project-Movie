@@ -1,44 +1,58 @@
-import React, { Fragment, useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { Fragment, useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useFormik } from "formik";
 import { Form, Input, DatePicker, InputNumber, Switch } from "antd";
 import moment from "moment";
-import { themPhimUploadHinhAction } from "../../../../redux/actions/QuanLyPhimAction";
+import {
+  capNhatPhimUploadAction,
+  layThongTinPhimAction,
+} from "../../../../redux/actions/QuanLyPhimAction";
 import { GROUP_ID } from "../../../../util/setting/config";
+
 const { TextArea } = Input;
 
-function AddFilm(props) {
+function EditFilm(props) {
   const [imgSrc, setImgSrc] = useState(
     "https://www.instandngs4p.eu/wp-content/themes/fox/images/placeholder.jpg"
   );
   const dispatch = useDispatch();
+  const { thongTinPhim } = useSelector((state) => state.QuanLyPhimReducer);
+  //   console.log({ thongTinPhim });
+
+  useEffect(() => {
+    let id = props.match.params.id;
+    dispatch(layThongTinPhimAction(id));
+  }, [dispatch, props]);
+
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: {
-      tenPhim: "",
-      trailer: "",
-      moTa: "",
-      ngayKhoiChieu: "",
-      dangChieu: false,
-      sapChieu: false,
-      hot: false,
-      danhGia: 0,
-      hinhAnh: {},
+      maPhim: thongTinPhim.maPhim,
+      tenPhim: thongTinPhim.tenPhim,
+      trailer: thongTinPhim.trailer,
+      moTa: thongTinPhim.moTa,
+      ngayKhoiChieu: thongTinPhim.ngayKhoiChieu,
+      dangChieu: thongTinPhim.dangChieu,
+      sapChieu: thongTinPhim.sapChieu,
+      hot: thongTinPhim.hot,
+      danhGia: thongTinPhim.danhGia,
+      maNhom: GROUP_ID,
+      hinhAnh: null,
     },
     onSubmit: (values) => {
-      // console.log({ values });
-      values.maNhom = GROUP_ID;
       // Tạo đối tượng formdata
       let formData = new FormData();
       for (let key in values) {
         if (key !== "hinhAnh") {
           formData.append(key, values[key]);
         } else {
-          formData.append("File", values.hinhAnh, values.hinhAnh.name);
+          if (values.hinhAnh !== null) {
+            formData.append("File", values.hinhAnh, values.hinhAnh.name);
+          }
         }
       }
-
-      //  gọi API đưa formdata về backend
-      dispatch(themPhimUploadHinhAction(formData));
+      // cập nhật phim
+      dispatch(capNhatPhimUploadAction(formData));
     },
   });
   const handleChangeSwitch = (name) => {
@@ -52,10 +66,10 @@ function AddFilm(props) {
     };
   };
   const handleChangeDatePicker = (value) => {
-    let ngayKhoiChieu = moment(value).format("DD/MM/YYYY");
+    let ngayKhoiChieu = moment(value);
     formik.setFieldValue("ngayKhoiChieu", ngayKhoiChieu);
   };
-  const handleChangeFile = (e) => {
+  const handleChangeFile = async (e) => {
     // Lấy file ra từ e
     let file = e.target.files[0];
     if (
@@ -63,6 +77,8 @@ function AddFilm(props) {
       file.type === "image/jpeg" ||
       file.type === "image/png"
     ) {
+      // Đem dữ liệu vào formik
+      await formik.setFieldValue("hinhAnh", file);
       // Tạo đối tượng để đọc file
       let reader = new FileReader();
       reader.readAsDataURL(file);
@@ -73,8 +89,6 @@ function AddFilm(props) {
     } else {
       alert("File không đúng!");
     }
-    // Đem dữ liệu vào formik
-    formik.setFieldValue("hinhAnh", file);
   };
   return (
     <Fragment>
@@ -93,33 +107,61 @@ function AddFilm(props) {
         size="default"
         style={{ padding: "20px 0" }}
       >
-        <h1 className="text-2xl ml-5 mb-8">Thêm phim mới</h1>
+        <h1 className="text-2xl ml-5 mb-8">Chỉnh sửa phim</h1>
         <Form.Item label="Tên phim">
-          <Input name="tenPhim" onChange={formik.handleChange} />
+          <Input
+            name="tenPhim"
+            onChange={formik.handleChange}
+            value={formik.values.tenPhim}
+          />
         </Form.Item>
         <Form.Item label="Trailer">
-          <Input name="trailer" onChange={formik.handleChange} />
+          <Input
+            name="trailer"
+            onChange={formik.handleChange}
+            value={formik.values.trailer}
+          />
         </Form.Item>
         <Form.Item label="Mô tả">
-          <TextArea className="w-full p-2" rows="6" name="moTa" onChange={formik.handleChange} />
+          <TextArea
+            className="w-full p-2"
+            rows="6"
+            name="moTa"
+            onChange={formik.handleChange}
+            value={formik.values.moTa}
+          />
         </Form.Item>
         <Form.Item label="Ngày khởi chiếu">
-          <DatePicker format={"DD/MM/YYYY"} onChange={handleChangeDatePicker} />
+          <DatePicker
+            onChange={handleChangeDatePicker}
+            format="DD/MM/YYYY"
+            value={moment(formik.values.ngayKhoiChieu)}
+          />
         </Form.Item>
         <Form.Item label="Đang chiếu">
-          <Switch onChange={handleChangeSwitch("dangChieu")} />
+          <Switch
+            onChange={handleChangeSwitch("dangChieu")}
+            checked={formik.values.dangChieu}
+          />
         </Form.Item>
         <Form.Item label="Sắp chiếu">
-          <Switch onChange={handleChangeSwitch("sapChieu")} />
+          <Switch
+            onChange={handleChangeSwitch("sapChieu")}
+            checked={formik.values.sapChieu}
+          />
         </Form.Item>
         <Form.Item label="Hot">
-          <Switch onChange={handleChangeSwitch("hot")} />
+          <Switch
+            onChange={handleChangeSwitch("hot")}
+            checked={formik.values.hot}
+          />
         </Form.Item>
         <Form.Item label="Đánh giá">
           <InputNumber
             onChange={handleChangeInputNumber("danhGia")}
             min={1}
             max={10}
+            value={formik.values.danhGia}
           />
         </Form.Item>
         <Form.Item label="Hình ảnh">
@@ -130,7 +172,12 @@ function AddFilm(props) {
           />
           <div className="mt-4">
             <img
-              src={imgSrc}
+              src={
+                imgSrc ===
+                "https://www.instandngs4p.eu/wp-content/themes/fox/images/placeholder.jpg"
+                  ? thongTinPhim.hinhAnh
+                  : imgSrc
+              }
               alt={imgSrc}
               style={{
                 width: "200px",
@@ -146,7 +193,7 @@ function AddFilm(props) {
             type="submit"
             className="bg-green-500 p-2 text-white font-semibold hover:bg-green-700 transition-all ease-in-out duration-300"
           >
-            THÊM PHIM
+            CHỈNH SỬA
           </button>
         </Form.Item>
       </Form>
@@ -154,4 +201,4 @@ function AddFilm(props) {
   );
 }
 
-export default AddFilm;
+export default EditFilm;

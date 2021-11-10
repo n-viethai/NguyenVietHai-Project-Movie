@@ -43,11 +43,11 @@ export default function Header(props) {
     } else {
       return (
         <div className="flex items-center">
-          <div className="mr-2 rounded-full bg-white w-8 h-8 text-black font-semibold flex items-center justify-center">
+          <div className="mr-2 rounded-full bg-black w-8 h-8 text-white font-semibold flex items-center justify-center">
             <UserOutlined />
           </div>
           <button
-            className="self-center rounded text-white mr-4 font-semibold  "
+            className="self-center rounded text-black mr-4 font-semibold  "
             onClick={() => {
               history.push("/profile");
             }}
@@ -55,7 +55,7 @@ export default function Header(props) {
             {userLogin.taiKhoan}
           </button>
           <button
-            className="mx-4 text-white font-semibold"
+            className="mx-4 text-black font-semibold"
             onClick={() => {
               localStorage.removeItem(USER_LOGIN);
               localStorage.removeItem(ACCESS_TOKEN);
@@ -71,7 +71,7 @@ export default function Header(props) {
 
   return (
     <div>
-      <header className="p-4 bg-opacity-40 bg-black fixed top-0 w-full z-50">
+      <header className="p-4 shadow-md bg-white fixed top-0 w-full z-50">
         <div className="container flex justify-between mx-auto h-10">
           <NavLink
             to="/"
@@ -87,7 +87,7 @@ export default function Header(props) {
             <li className="flex">
               <NavLink
                 to="/home"
-                className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-white hover:text-red-500"
+                className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-black hover:text-red-500"
                 activeClassName="border-b-2 border-red-500"
               >
                 {t("Home")}
@@ -96,7 +96,7 @@ export default function Header(props) {
             <li className="flex">
               <NavLink
                 to="/contact"
-                className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-white hover:text-red-500"
+                className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-black hover:text-red-500"
                 activeClassName="border-b-2 border-red-500"
               >
                 {t("Contact")}
@@ -105,7 +105,7 @@ export default function Header(props) {
             <li className="flex">
               <NavLink
                 to="/news"
-                className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-white hover:text-red-500"
+                className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-black hover:text-red-500"
                 activeClassName="border-b-2 border-red-500"
               >
                 {t("News")}
@@ -115,21 +115,10 @@ export default function Header(props) {
           <div className="items-center flex-shrink-0 hidden lg:flex">
             {renderLogin()}
             <Select
-              defaultValue="en"
+              defaultValue="vi"
               style={{ width: 140 }}
               onChange={handleChange}
             >
-              <Option value="en">
-                <div className="flex items-center">
-                  <img
-                    src="http://3e.com.vn/vnt_upload/lang/lang-en.png"
-                    alt="English"
-                    style={{ width: "25px", height: "18px" }}
-                    className="mr-2 rounded"
-                  />{" "}
-                  <span>English</span>
-                </div>
-              </Option>
               <Option value="vi">
                 <div className="flex items-center">
                   <img
@@ -141,6 +130,17 @@ export default function Header(props) {
                   <span>Việt Nam</span>
                 </div>
               </Option>
+              <Option value="en">
+                <div className="flex items-center">
+                  <img
+                    src="http://3e.com.vn/vnt_upload/lang/lang-en.png"
+                    alt="English"
+                    style={{ width: "25px", height: "18px" }}
+                    className="mr-2 rounded"
+                  />{" "}
+                  <span>English</span>
+                </div>
+              </Option>
             </Select>
           </div>
           <button className="p-4 lg:hidden">
@@ -149,7 +149,7 @@ export default function Header(props) {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="w-6 h-6 text-coolGray-800"
+              className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"
