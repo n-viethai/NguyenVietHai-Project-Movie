@@ -112,7 +112,6 @@ export default function Header(props) {
               >
                 {t("Liên hệ")}
               </a>
-
             </li>
             <li className="flex">
               <a
@@ -134,7 +133,7 @@ export default function Header(props) {
               <Option value="vi">
                 <div className="flex items-center">
                   <img
-                    src="http://3e.com.vn/vnt_upload/lang/lang-vn.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg/230px-Flag_of_North_Vietnam_%281955%E2%80%931976%29.svg.png"
                     alt="VietNamese"
                     style={{ width: "25px", height: "18px" }}
                     className="mr-2 rounded"
@@ -145,7 +144,7 @@ export default function Header(props) {
               <Option value="en">
                 <div className="flex items-center">
                   <img
-                    src="http://3e.com.vn/vnt_upload/lang/lang-en.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_United_Kingdom.svg/300px-Flag_of_the_United_Kingdom.svg.png"
                     alt="English"
                     style={{ width: "25px", height: "18px" }}
                     className="mr-2 rounded"
