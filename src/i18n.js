@@ -22,7 +22,7 @@ i18n
   .init({
     fallbackLng: 'vi',
     debug: true,
-    whitelist : ['en','vi'],
+    whitelist : ['vi','en'],
 
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default

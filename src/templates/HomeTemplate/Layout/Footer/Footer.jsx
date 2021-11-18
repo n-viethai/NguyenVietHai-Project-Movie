@@ -18,7 +18,7 @@ export default function Footer(props) {
           </div>
         </div>
         <div className="w-1/4">
-          <p className="text-white text-base">ĐỐI TÁC</p>
+          <p className="text-white text-base mb-5">ĐỐI TÁC</p>
           <div className="flex">
             <div>
               <a
@@ -185,7 +185,7 @@ export default function Footer(props) {
         </div>
         <div className="w-1/4">
           <p className="text-white text-base">ĐĂNG KÝ</p>
-          <p className="text-white">Đăng ký để nhận thông tin khuyến mãi</p>
+          <p className="text-white my-5">Đăng ký để nhận thông tin khuyến mãi</p>
           <div className="flex rounded-xl overflow-hidden border border-white">
             <input
               autoComplete="off"

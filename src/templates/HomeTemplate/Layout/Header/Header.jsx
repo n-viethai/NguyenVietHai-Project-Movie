@@ -29,7 +29,7 @@ export default function Header(props) {
             }}
           >
             <i className="fa-solid fa-right-to-bracket mr-2"></i>
-            {t("Sign in")}
+            {t("Đăng nhập")}
           </button>
           <button
             className="self-center px-8 py-3 font-semibold rounded text-black"
@@ -38,7 +38,7 @@ export default function Header(props) {
             }}
           >
             <i className="fa-solid fa-user-plus mr-2"></i>
-            {t("Sign up")}
+            {t("Đăng ký")}
           </button>
         </Fragment>
       );
@@ -64,7 +64,7 @@ export default function Header(props) {
               window.location.reload();
             }}
           >
-            {t("Log out")}
+            {t("Đăng xuất")}
           </button>
         </div>
       );
@@ -92,7 +92,7 @@ export default function Header(props) {
                 className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-black hover:text-red-500"
                 activeClassName="border-b-2 border-red-500"
               >
-                {t("Home")}
+                {t("Trang chủ")}
               </NavLink>
             </li>
             <li className="flex">
@@ -110,7 +110,7 @@ export default function Header(props) {
                 className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-black hover:text-red-500"
                 // activeClassName="border-b-2 border-red-500"
               >
-                {t("Contact")}
+                {t("Liên hệ")}
               </a>
 
             </li>
@@ -120,7 +120,7 @@ export default function Header(props) {
                 className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-black hover:text-red-500"
                 activeClassName="border-b-2 border-red-500"
               >
-                {t("News")}
+                {t("Tin tức")}
               </NavLink>
             </li>
           </ul>
