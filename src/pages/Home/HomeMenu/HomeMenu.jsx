@@ -76,12 +76,12 @@ function HomeMenu(props) {
                                   return (
                                     <NavLink
                                       to={`/checkout/${lichChieu.maLichChieu}`}
-                                      className=" text-sm bg-black bg-opacity-40 text-white p-1 rounded-md shadow-lg hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out"
+                                      className=" text-sm border font-semibold border-gray-400 bg-gray-300 bg-opacity-40 text-green-500 px-2 py-1 rounded-md shadow-lg hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out"
                                       key={index}
                                     >
                                       {moment(
                                         lichChieu.ngayChieuGioChieu
-                                      ).format("hh:mm A")}
+                                      ).format("HH:MM")}
                                     </NavLink>
                                   );
                                 })}
