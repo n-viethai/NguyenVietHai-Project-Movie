@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.686572c5.chunk.css",
+    "main.js": "/static/js/main.2432a224.chunk.js",
+    "main.js.map": "/static/js/main.2432a224.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d05fd44b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d05fd44b.js.map",
+    "static/css/2.a9409a0b.chunk.css": "/static/css/2.a9409a0b.chunk.css",
+    "static/js/2.adb400f9.chunk.js": "/static/js/2.adb400f9.chunk.js",
+    "static/js/2.adb400f9.chunk.js.map": "/static/js/2.adb400f9.chunk.js.map",
+    "static/js/3.8c445f0a.chunk.js": "/static/js/3.8c445f0a.chunk.js",
+    "static/js/3.8c445f0a.chunk.js.map": "/static/js/3.8c445f0a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.a9409a0b.chunk.css.map": "/static/css/2.a9409a0b.chunk.css.map",
+    "static/css/main.686572c5.chunk.css.map": "/static/css/main.686572c5.chunk.css.map",
+    "static/js/2.adb400f9.chunk.js.LICENSE.txt": "/static/js/2.adb400f9.chunk.js.LICENSE.txt",
+    "static/media/Bean Eater-1s-200px.90ba6351.svg": "/static/media/Bean Eater-1s-200px.90ba6351.svg",
+    "static/media/getFetch.cjs": "/static/media/getFetch.582d29c4.cjs",
+    "static/media/mobile.74829ff5.png": "/static/media/mobile.74829ff5.png",
+    "static/media/slick-theme.css": "/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d05fd44b.js",
+    "static/css/2.a9409a0b.chunk.css",
+    "static/js/2.adb400f9.chunk.js",
+    "static/css/main.686572c5.chunk.css",
+    "static/js/main.2432a224.chunk.js"
+  ]
+}
