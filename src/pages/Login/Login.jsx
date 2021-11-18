@@ -18,107 +18,74 @@ export default function Login(props) {
     },
   });
   return (
-    <div className="lg:w-1/2 xl:max-w-screen-sm">
-      <div className="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
-        <div className="cursor-pointer flex items-center">
-          <div>
-            <svg
-              className="w-10 text-indigo-500"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              version="1.1"
-              id="Layer_1"
-              x="0px"
-              y="0px"
-              viewBox="0 0 225 225"
-              style={{ enableBackground: "new 0 0 225 225" }}
-              xmlSpace="preserve"
-            >
-              <style
-                type="text/css"
-                dangerouslySetInnerHTML={{
-                  __html:
-                    "\n                                    .st0{fill:none;stroke:currentColor;stroke-width:20;stroke-linecap:round;stroke-miterlimit:3;}\n                                ",
-                }}
-              />
-              <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-                <g>
-                  <path
-                    id="Layer0_0_1_STROKES"
-                    className="st0"
-                    d="M173.8,151.5l13.6-13.6 M35.4,89.9l29.1-29 M89.4,34.9v1 M137.4,187.9l-0.6-0.4     M36.6,138.7l0.2-0.2 M56.1,169.1l27.7-27.6 M63.8,111.5l74.3-74.4 M87.1,188.1L187.6,87.6 M110.8,114.5l57.8-57.8"
-                  />
-                </g>
-              </g>
-            </svg>
-          </div>
-          <div className="text-2xl text-indigo-800 tracking-wide ml-2 font-semibold">
-            blockify
-          </div>
+    <div
+      className="w-screen h-screen relative"
+      style={{
+        backgroundImage: "url(https://tix.vn/app/assets/img/icons/bg2.jpg)",
+        backgroundSize: "contain",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "center",
+      }}
+    >
+      <div
+        className="absolute p-10 bg-white rounded-2xl shadow-xl"
+        style={{
+          //   maxWidth: "400px",
+          width: "400px",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          //   backgroundImage:"linear-gradient(to bottom,rgba(20,50,93,.9),rgba(8,22,48,.9))"
+        }}
+      >
+        <div className="flex flex-col justify-center items-center">
+          <img
+            src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png"
+            alt="..."
+          />
         </div>
-      </div>
-      <div className="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
-        <h2
-          className="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
-              xl:text-bold"
-        >
-          Đăng nhập
-        </h2>
-        <div className="mt-12">
+        <div className="mt-10">
+          <p className="mb-10 text-xl font-semibold">Đăng nhập</p>
           <form onSubmit={formik.handleSubmit}>
-            <div>
-              <div className="text-sm font-bold text-gray-700 tracking-wide">
+            <div className="py-2 px-2 rounded border border-gray-400 relative mt-5">
+              <div
+                className="absolute px-3  text-base z-10 bg-white text-black"
+                style={{ top: "-14px", left: "10px" }}
+              >
                 Tài khoản
               </div>
               <input
-                className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                type="text"
                 name="taiKhoan"
-                placeholder="Nhập tài khoản"
+                className="w-full outline-none border-0 px-2 bg-transparent text-black"
+                style={{ height: "30px" }}
                 onChange={formik.handleChange}
               />
             </div>
-            <div className="mt-8">
-              <div className="flex justify-between items-center">
-                <div className="text-sm font-bold text-gray-700 tracking-wide">
-                  Mật khẩu
-                </div>
-                <div>
-                  <p
-                    className="text-xs font-display font-semibold text-indigo-600 hover:text-indigo-800
-                                  cursor-pointer"
-                  >
-                    Quên mật khẩu?
-                  </p>
-                </div>
+            <div className="py-2 px-2 rounded border border-gray-400 relative mt-10">
+              <div
+                className="absolute px-3  text-base z-10 bg-white text-black"
+                style={{ top: "-14px", left: "10px" }}
+              >
+                Mật khẩu
               </div>
               <input
-                className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-                placeholder="Nhập mật khẩu"
                 type="password"
                 name="matKhau"
+                className="w-full outline-none border-0 px-2 bg-transparent text-black"
+                style={{ height: "30px" }}
                 onChange={formik.handleChange}
               />
             </div>
-            <div className="mt-10">
+            <div className="text-center">
               <button
-                className="bg-indigo-500 text-gray-100 p-4 w-full rounded-full tracking-wide
-                          font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600
-                          shadow-lg"
                 type="submit"
+                className="mt-5 bg-green-500 py-3 px-10 text-base text-white shadow-lg hover:bg-green-700 transition-all duration-300 ease-in-out"
               >
                 Đăng nhập
               </button>
             </div>
           </form>
-          <div className="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
-            Bạn không có tài khoản ?{" "}
-            <NavLink
-              to="/register"
-              className="cursor-pointer text-indigo-600 hover:text-indigo-800"
-            >
-              Đăng ký
-            </NavLink>
-          </div>
         </div>
       </div>
     </div>

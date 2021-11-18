@@ -76,7 +76,7 @@ function HomeMenu(props) {
                                   return (
                                     <NavLink
                                       to={`/checkout/${lichChieu.maLichChieu}`}
-                                      className="text-base bg-black bg-opacity-40 text-white p-1 rounded-md hover:text-red-500"
+                                      className=" text-sm bg-black bg-opacity-40 text-white p-1 rounded-md shadow-lg hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out"
                                       key={index}
                                     >
                                       {moment(

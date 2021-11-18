@@ -1,100 +1,202 @@
 import React from "react";
+import { SendOutlined } from "@ant-design/icons";
 
 export default function Footer(props) {
   return (
-    <footer className="bg-gray-300">
-      <div className="2xl:max-w-screen-xl mx-auto container px-6 space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
-        <div className="grid grid-cols-12">
-          <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
-            <a
-              href="#"
-              className="flex justify-center space-x-3 md:justify-start"
-            >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-violet-600">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 32 32"
-                  fill="currentColor"
-                  className="flex-shrink-0 w-5 h-5 rounded-full text-coolGray-50"
-                >
-                  <path d="M18.266 26.068l7.839-7.854 4.469 4.479c1.859 1.859 1.859 4.875 0 6.734l-1.104 1.104c-1.859 1.865-4.875 1.865-6.734 0zM30.563 2.531l-1.109-1.104c-1.859-1.859-4.875-1.859-6.734 0l-6.719 6.734-6.734-6.734c-1.859-1.859-4.875-1.859-6.734 0l-1.104 1.104c-1.859 1.859-1.859 4.875 0 6.734l6.734 6.734-6.734 6.734c-1.859 1.859-1.859 4.875 0 6.734l1.104 1.104c1.859 1.859 4.875 1.859 6.734 0l21.307-21.307c1.859-1.859 1.859-4.875 0-6.734z"></path>
-                </svg>
-              </div>
-              <span className="self-center text-2xl font-semibold">
-                Brand name
-              </span>
-            </a>
-          </div>
-          <div className="col-span-6 text-center md:text-left md:col-span-3">
-            <p className="pb-1 text-lg font-medium">Category</p>
-            <ul>
-              <li>
-                <a href="#" className="hover:text-violet-600">
-                  Link
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-violet-600">
-                  Link
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-violet-600">
-                  Link
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-violet-600">
-                  Link
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-violet-600">
-                  Link
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-span-6 text-center md:text-left md:col-span-3">
-            <p className="pb-1 text-lg font-medium">Category</p>
-            <ul>
-              <li>
-                <a href="#" className="hover:text-violet-600">
-                  Link
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-violet-600">
-                  Link
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-violet-600">
-                  Link
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-violet-600">
-                  Link
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-violet-600">
-                  Link
-                </a>
-              </li>
-            </ul>
+    <footer
+      className="bg-black bg-opacity-90"
+      style={{ width: "100%" }}
+      id="contact"
+    >
+      <div className="flex flex-row mx-auto max-w-screen-xl px-5 py-20">
+        <div className="w-1/4">
+          <div>
+            <img
+              src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png"
+              alt="..."
+            />
           </div>
         </div>
-        <div className="grid justify-center pt-6 lg:justify-between">
-          <div className="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
-            <span>©2021 All rights reserved</span>
-            <a href="#">
-              <span>Privacy policy</span>
-            </a>
-            <a href="#">
-              <span>Terms of service</span>
-            </a>
+        <div className="w-1/4">
+          <p className="text-white text-base">ĐỐI TÁC</p>
+          <div className="flex">
+            <div>
+              <a
+                href="https://www.cgv.vn/"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white"
+              >
+                <img
+                  src="https://tix.vn/app/assets/img/icons/cgv.png"
+                  alt="..."
+                  className="w-full bg-white rounded-full"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </a>
+            </div>
+            <div className="mx-3">
+              <a
+                href="https://www.bhdstar.vn/en/"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white"
+              >
+                <img
+                  src="https://tix.vn/app/assets/img/icons/bhd.png"
+                  alt="..."
+                  className="w-full bg-white rounded-full"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </a>
+            </div>
+            <div className="mr-3">
+              <a
+                href="https://www.galaxycine.vn/"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white"
+              >
+                <img
+                  src="https://tix.vn/app/assets/img/icons/galaxycine.png"
+                  alt="..."
+                  className="w-full bg-white rounded-full"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://cinestar.com.vn/"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white"
+              >
+                <img
+                  src="https://tix.vn/app/assets/img/icons/cinestar.png"
+                  alt="..."
+                  className="w-full bg-white rounded-full"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </a>
+            </div>
+          </div>
+          <div className="flex mt-3">
+            <div>
+              <a
+                href="https://www.lottecinemavn.com"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white"
+              >
+                <img
+                  src="https://s3img.vcdn.vn/123phim/2018/09/404b8c4b80d77732e7426cdb7e24be20.png"
+                  alt="..."
+                  className="w-full bg-white rounded-full"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </a>
+            </div>
+            <div className="mx-3">
+              <a
+                href="https://www.megagscinemas.vn/"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white"
+              >
+                <img
+                  src="https://tix.vn/app/assets/img/icons/megags.png"
+                  alt="..."
+                  className="w-full bg-white rounded-full"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </a>
+            </div>
+            <div className="mr-3">
+              <a
+                href="https://www.betacinemas.vn/home.htm"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white"
+              >
+                <img
+                  src="https://tix.vn/app/assets/img/icons/bt.jpg"
+                  alt="..."
+                  className="w-full bg-white rounded-full"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </a>
+            </div>
+            <div>
+              <a
+                href="http://ddcinema.vn/"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white"
+              >
+                <img
+                  src="https://tix.vn/app/assets/img/icons/dongdacinema.png"
+                  alt="..."
+                  className="w-full bg-white rounded-full"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="w-1/4">
+          <p className="text-white text-base">LIÊN HỆ</p>
+          <div className="">
+            <div className="mt-5">
+              <a
+                href="https://www.facebook.com/viethai.1309/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white text-2xl"
+              >
+                <i className="fa-brands fa-facebook-square"></i>
+                <span className="text-sm ml-3">facebook.com/viethai.1309/</span>
+
+              </a>
+            </div>
+            <div className="mt-3">
+              <a
+                href="mailto:viethai1309@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white text-2xl"
+              >
+                <i className="fa-solid fa-envelope"></i>
+                <span className="text-sm ml-3">viethai1309@gmail.com</span>
+              </a>
+            </div>
+            <div className="mt-3">
+              <a
+                href="tel:+84976283273"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white text-2xl"
+              >
+                <i className="fa-solid fa-mobile-screen-button"></i>
+                <span className="text-sm ml-3">0976 283 273</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="w-1/4">
+          <p className="text-white text-base">ĐĂNG KÝ</p>
+          <p className="text-white">Đăng ký để nhận thông tin khuyến mãi</p>
+          <div className="flex rounded-xl overflow-hidden border border-white">
+            <input
+              autoComplete="off"
+              type="email"
+              placeholder="Email"
+              className="text-white p-2 text-base bg-transparent border-none"
+              style={{ flex: "1", outline: "none" }}
+            />
+            <button className="text-2xl text-white px-5 py-3 flex justify-center items-center">
+              <SendOutlined />
+            </button>
           </div>
         </div>
       </div>

@@ -72,9 +72,9 @@ export default function Home(props) {
                 height="400"
                 src={linkModal}
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
               <div
                 className="absolute"
@@ -178,16 +178,18 @@ export default function Home(props) {
               <p className="mt-8 text-white mb-0">
                 Có hai phiên bản cho
                 <a
-                  className="text-white mx-2 font-semibold"
+                  className="text-white mx-2 font-semibold underline"
                   target="_blank"
+                  rel="noreferrer"
                   href="https://apps.apple.com/us/app/123phim-mua-ve-lien-tay-chon/id615186197"
                 >
                   IOS
                 </a>
                 &
                 <a
-                  className="text-white mx-2 font-semibold"
+                  className="text-white mx-2 font-semibold underline"
                   target="_blank"
+                  rel="noreferrer"
                   href="https://play.google.com/store/apps/details?id=vn.com.vng.phim123"
                 >
                   Android

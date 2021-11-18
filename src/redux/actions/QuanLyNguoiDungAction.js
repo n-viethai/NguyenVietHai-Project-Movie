@@ -1,4 +1,5 @@
 import {
+  dangKy,
   dangNhap,
   layThongTinNguoiDung,
 } from "../../services/QuanLyNguoiDungService";
@@ -33,6 +34,19 @@ export const layThongTinNguoiDungAction = () => {
         type: SET_THONG_TIN_NGUOI_DUNG,
         thongTinNguoiDung: result.data.content,
       });
+    } catch (error) {
+      console.log({ error });
+    }
+  };
+};
+
+export const dangKyAction = (thongTinNguoiDung) => {
+  return async (dispatch) => {
+    try {
+      const result = await dangKy(thongTinNguoiDung);
+      console.log(result);
+      alert("Đăng ký thành công!");
+      history.push("/login");
     } catch (error) {
       console.log({ error });
     }

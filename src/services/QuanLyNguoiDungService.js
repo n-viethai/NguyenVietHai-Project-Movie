@@ -8,7 +8,11 @@ class QuanLyNguoiDungService extends baseService {
   layThongTinNguoiDung = () => {
     return this.post("/api/QuanLyNguoiDung/ThongTinTaiKhoan");
   };
+  dangKy = (thongTinNguoiDung) => {
+    return this.post("/api/QuanLyNguoiDung/DangKy", thongTinNguoiDung);
+  };
 }
 const QLNguoiDung = new QuanLyNguoiDungService();
 export const { dangNhap } = QLNguoiDung;
 export const { layThongTinNguoiDung } = QLNguoiDung;
+export const { dangKy } = QLNguoiDung;

@@ -35,7 +35,9 @@ function App() {
         <HomeTemplate exact path="/contact" Component={Contact} />
         <HomeTemplate exact path="/news" Component={News} />
         <HomeTemplate exact path="/detail/:id" Component={Detail} />
-        <UserTemplate exact path="/register" Component={Register} />
+        {/* <UserTemplate exact path="/register" Component={Register} /> */}
+        <Register exact path="/register" />
+        <Login exact path="/login" />
         <CheckoutTemplate exact path="/checkout/:id" Component={Checkout} />
         {/* <Suspense fallback={<h1>LOADING....</h1>}>
           <CheckoutTemplateLazy
@@ -50,7 +52,7 @@ function App() {
         <AdminTemplate exact path="/admin/film/addfilm" Component={AddFilm} />
         <AdminTemplate exact path="/admin/film/editfilm/:id" Component={EditFilm} />
         <AdminTemplate exact path="/admin/film/showtime/:id/:tenphim" Component={Showtime} />
-        <UserTemplate exact path="/login" Component={Login} />
+        {/* <UserTemplate exact path="/login" Component={Login} /> */}
         <HomeTemplate exact path="/" Component={Home} />
       </Switch>
     </Router>

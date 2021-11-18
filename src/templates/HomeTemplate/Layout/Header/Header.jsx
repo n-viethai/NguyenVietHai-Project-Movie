@@ -23,19 +23,21 @@ export default function Header(props) {
       return (
         <Fragment>
           <button
-            className="self-center px-8 py-3 rounded text-white"
+            className="self-center px-8 py-3 rounded text-black"
             onClick={() => {
               history.push("/login");
             }}
           >
+            <i className="fa-solid fa-right-to-bracket mr-2"></i>
             {t("Sign in")}
           </button>
           <button
-            className="self-center px-8 py-3 font-semibold rounded text-white"
+            className="self-center px-8 py-3 font-semibold rounded text-black"
             onClick={() => {
               history.push("/register");
             }}
           >
+            <i className="fa-solid fa-user-plus mr-2"></i>
             {t("Sign up")}
           </button>
         </Fragment>
@@ -86,7 +88,7 @@ export default function Header(props) {
           <ul className="items-stretch hidden space-x-3 lg:flex">
             <li className="flex">
               <NavLink
-                to="/home"
+                to="/"
                 className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-black hover:text-red-500"
                 activeClassName="border-b-2 border-red-500"
               >
@@ -94,13 +96,23 @@ export default function Header(props) {
               </NavLink>
             </li>
             <li className="flex">
-              <NavLink
+              {/* <NavLink
                 to="/contact"
+                // hash="#contact"
                 className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-black hover:text-red-500"
                 activeClassName="border-b-2 border-red-500"
               >
                 {t("Contact")}
-              </NavLink>
+              </NavLink> */}
+              <a
+                href="#contact"
+                // hash="#contact"
+                className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-black hover:text-red-500"
+                // activeClassName="border-b-2 border-red-500"
+              >
+                {t("Contact")}
+              </a>
+
             </li>
             <li className="flex">
               <NavLink

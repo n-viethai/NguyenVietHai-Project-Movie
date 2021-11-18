@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Layout, Breadcrumb, Input, Button, Table } from "antd";
+import { Layout, Breadcrumb, Input, Table } from "antd";
 import {
   EditOutlined,
   DeleteOutlined,
