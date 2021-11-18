@@ -115,13 +115,13 @@ export default function Header(props) {
 
             </li>
             <li className="flex">
-              <NavLink
-                to="/news"
+              <a
+                href="#tinTuc"
                 className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-black hover:text-red-500"
-                activeClassName="border-b-2 border-red-500"
+                // activeClassName="border-b-2 border-red-500"
               >
                 {t("Tin tức")}
-              </NavLink>
+              </a>
             </li>
           </ul>
           <div className="items-center flex-shrink-0 hidden lg:flex">

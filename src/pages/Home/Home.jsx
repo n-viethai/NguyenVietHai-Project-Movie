@@ -96,7 +96,7 @@ export default function Home(props) {
           {/* end modal youtube */}
 
           {/* Tin tức */}
-          <div>
+          <div id="tinTuc">
             <div className="title mt-16">
               <h1>TIN TỨC</h1>
             </div>
@@ -144,7 +144,7 @@ export default function Home(props) {
           {/* Ứng dụng */}
         </div>
         <div
-          className="relative"
+          className="relative mt-10"
           style={{
             height: "600px",
             backgroundImage:
