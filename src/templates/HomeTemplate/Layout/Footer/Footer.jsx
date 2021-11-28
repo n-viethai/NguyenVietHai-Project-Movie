@@ -8,8 +8,8 @@ export default function Footer(props) {
       style={{ width: "100%" }}
       id="contact"
     >
-      <div className="flex flex-row mx-auto max-w-screen-xl px-5 py-20">
-        <div className="w-1/4">
+      <div className="flex flex-col sm:flex-row mx-auto max-w-screen-xl px-5 py-20 sm:flex-wrap ">
+        <div className="w-full mt-2 sm:w-1/2  md:w-1/4">
           <div>
             <img
               src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png"
@@ -17,7 +17,7 @@ export default function Footer(props) {
             />
           </div>
         </div>
-        <div className="w-1/4">
+        <div className="w-full mt-2 sm:w-1/2 md:w-1/4">
           <p className="text-white text-base mb-5">ĐỐI TÁC</p>
           <div className="flex">
             <div>
@@ -144,7 +144,7 @@ export default function Footer(props) {
             </div>
           </div>
         </div>
-        <div className="w-1/4">
+        <div className="w-full mt-2 sm:w-1/2 md:w-1/4">
           <p className="text-white text-base">LIÊN HỆ</p>
           <div className="">
             <div className="mt-5">
@@ -183,7 +183,7 @@ export default function Footer(props) {
             </div>
           </div>
         </div>
-        <div className="w-1/4">
+        <div className="w-full mt-2 sm:w-1/2 md:w-1/4">
           <p className="text-white text-base">ĐĂNG KÝ</p>
           <p className="text-white my-5">Đăng ký để nhận thông tin khuyến mãi</p>
           <div className="flex rounded-xl overflow-hidden border border-white">
