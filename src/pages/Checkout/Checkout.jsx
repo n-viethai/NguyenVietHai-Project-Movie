@@ -155,7 +155,7 @@ function Checkout(props) {
           </div>
         </div>
         <div
-          className="w-1/4 min-h-screen pt-4 flex flex-col justify-between"
+          className="w-1/4 h-full pt-4 flex flex-col justify-between"
           style={{ boxShadow: "-8px 0px 8px 1px rgba(0, 0, 0, 0.08)" }}
         >
           <div className="px-4">
@@ -204,15 +204,6 @@ function Checkout(props) {
                   })}
                 </div>
               </div>
-              {/* <p className="mb-0 text-green-500 font-semibold">
-                {danhSachGheDangDat
-                  .reduce((tongTien, item, index) => {
-                    tongTien = tongTien + item.giaVe;
-                    return tongTien;
-                  }, 0)
-                  .toLocaleString()}{" "}
-                VNĐ
-              </p> */}
             </div>
             <div className="w-full border-b border-gray-200"></div>
             <div className="py-2">
@@ -225,7 +216,7 @@ function Checkout(props) {
               <p className="mb-0 font-semibold">{userLogin.soDT}</p>
             </div>
             <div className="w-full border-b border-gray-200"></div>
-            <div className="py-2 flex justify-between items-center">
+            <div className="py-2 flex justify-between items-center md:flex-wrap">
               <div>
                 <p className="text-gray-400 mb-2">Mã giảm giá</p>
                 <input
@@ -234,7 +225,7 @@ function Checkout(props) {
                   placeholder="Nhập tại đây ..."
                 />
               </div>
-              <div className="px-3 text-white bg-red-500 rounded flex items-center h-10 font-semibold cursor-pointer hover:bg-red-700 transition-all ease-in-out duration-500">
+              <div className="px-3 md:mt-3 text-white bg-red-500 rounded flex items-center h-10 font-semibold cursor-pointer hover:bg-red-700 transition-all ease-in-out duration-500">
                 Áp dụng
               </div>
             </div>
@@ -247,7 +238,7 @@ function Checkout(props) {
               Vé đã mua không thể đổi hoặc hoàn tiền
             </p>
             <div
-              className="bg-green-500 text-center text-white p-3 font-semibold text-xl hover:bg-green-700 transition-all duration-500 ease-in-out cursor-pointer"
+              className="bg-green-500 mt-10 text-center text-white p-3 font-semibold text-xl hover:bg-green-700 transition-all duration-500 ease-in-out cursor-pointer"
               onClick={() => {
                 const thongTinDatVe = new ThongTinDatVe();
                 thongTinDatVe.maLichChieu = props.match.params.id;
@@ -368,7 +359,7 @@ export default function (props) {
     </div>
   );
   return (
-    <div>
+    <div className="checkout px-10 xl:max-w-screen-xl lg:max-w-screen-lg max-w-screen-xl mx-auto min-h-screen" >
       <Tabs
         tabBarExtraContent={operations}
         defaultActiveKey="1"

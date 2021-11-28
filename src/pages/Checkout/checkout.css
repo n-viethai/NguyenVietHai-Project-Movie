@@ -36,3 +36,7 @@
 .gheVip {
     border: 1px solid #f71708;
 }
+
+.checkout .ant-tabs > .ant-tabs-nav {
+    margin-bottom: 0px !important;
+}

@@ -21,7 +21,8 @@ export const dangNhapAction = (thongTinDangNhap) => {
         history.push("/home");
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
+      alert(`${error.response.data.message}`);
     }
   };
 };
