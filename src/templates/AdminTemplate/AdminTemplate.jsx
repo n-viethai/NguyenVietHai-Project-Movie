@@ -3,7 +3,7 @@ import { Layout, Menu } from "antd";
 import "./adminTemplate.css";
 import { DesktopOutlined, FileOutlined, UserOutlined } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
-import { Redirect, Route } from "react-router";
+import { Redirect, Route } from "react-router-dom";
 import { USER_LOGIN, ACCESS_TOKEN } from "../../util/setting/config";
 import { useSelector } from "react-redux";
 import { history } from "../../App";
