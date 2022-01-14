@@ -7,18 +7,19 @@ import { HomeTemplate } from "./templates/HomeTemplate/HomeTemplate";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Detail from "./pages/Detail/Detail";
-import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import CheckoutTemplate from "./templates/CheckoutTemplate/CheckoutTemplate";
 import Checkout from "./pages/Checkout/Checkout";
 import { UserTemplate } from "./templates/UserTemplate/UserTemplate";
-import Loading from "./Components/Loading/Loading";
 import AdminTemplate from "./templates/AdminTemplate/AdminTemplate";
 import Dashboard from "./pages/Admin/Dashboard/Dashboard";
 import AdminFilm from "./pages/Admin/Films/AdminFilm";
 import Showtime from "./pages/Admin/Showtime/Showtime";
 import AddFilm from "./pages/Admin/Films/AddFilm/AddFilm";
 import EditFilm from "./pages/Admin/Films/EditFilm/EditFilm";
+
+import { LoadingComponent, ScrollToTopComponent } from "./Components";
 // import { lazy, Suspense } from "react";
+
 // const CheckoutTemplateLazy = lazy(() =>
 //   import("./templates/CheckoutTemplate/CheckoutTemplate")
 // );
@@ -28,8 +29,8 @@ export const history = createBrowserHistory();
 function App() {
   return (
     <Router history={history}>
-      <ScrollToTop />
-      <Loading />
+      <ScrollToTopComponent />
+      <LoadingComponent />
       <Switch>
         <HomeTemplate exact path="/home" Component={Home} />
         <HomeTemplate exact path="/contact" Component={Contact} />
@@ -50,8 +51,16 @@ function App() {
         <AdminTemplate exact path="/admin/user" Component={Dashboard} />
         <AdminTemplate exact path="/admin/film" Component={AdminFilm} />
         <AdminTemplate exact path="/admin/film/addfilm" Component={AddFilm} />
-        <AdminTemplate exact path="/admin/film/editfilm/:id" Component={EditFilm} />
-        <AdminTemplate exact path="/admin/film/showtime/:id/:tenphim" Component={Showtime} />
+        <AdminTemplate
+          exact
+          path="/admin/film/editfilm/:id"
+          Component={EditFilm}
+        />
+        <AdminTemplate
+          exact
+          path="/admin/film/showtime/:id/:tenphim"
+          Component={Showtime}
+        />
         {/* <UserTemplate exact path="/login" Component={Login} /> */}
         <HomeTemplate exact path="/" Component={Home} />
       </Switch>
