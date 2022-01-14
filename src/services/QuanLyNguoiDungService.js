@@ -15,4 +15,4 @@ class QuanLyNguoiDungService extends baseService {
 const QLNguoiDung = new QuanLyNguoiDungService();
 export const { dangNhap } = QLNguoiDung;
 export const { layThongTinNguoiDung } = QLNguoiDung;
-export const { dangKy } = QLNguoiDung;
+export const { dangKy } =QLNguoiDung; 
