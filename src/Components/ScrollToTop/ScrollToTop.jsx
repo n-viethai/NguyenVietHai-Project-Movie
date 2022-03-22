@@ -6,7 +6,10 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
   const dispatch = useDispatch();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
     dispatch({
       type:"CHUYEN_TAB_ACTIVE",
       tabKey: 1
